@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App | Sony Geddam</title>
+  <meta name="description" content="A weather app built with JavaScript, the Fetch API and the OpenWeatherMap API.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <section class="card" aria-labelledby="app-title">
+
+      <header class="card-header">
+        <h1 id="app-title">Weather App</h1>
+        <p>Search any city for live weather</p>
+      </header>
+
+      <!-- SEARCH -->
+      <form id="search-form" class="search" autocomplete="off">
+        <label for="city-input" class="sr-only">City name</label>
+        <input id="city-input" type="text" placeholder="Enter a city, e.g. Kakinada" required>
+        <button type="submit" class="btn" id="search-btn">Search</button>
+      </form>
+
+      <!-- Loading and error messages appear here -->
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <!-- RESULT -->
+      <div id="result" class="result" hidden>
+        <h2 id="location">City, Country</h2>
+
+        <div class="now">
+          <img id="icon" src="" alt="" width="100" height="100">
+          <p id="temp" class="temp">0°C</p>
+        </div>
+        <p id="condition" class="condition">Condition</p>
+
+        <dl class="stats">
+          <div>
+            <dt>Feels like</dt>
+            <dd id="feels">0°C</dd>
+          </div>
+          <div>
+            <dt>Humidity</dt>
+            <dd id="humidity">0%</dd>
+          </div>
+          <div>
+            <dt>Wind</dt>
+            <dd id="wind">0 km/h</dd>
+          </div>
+        </dl>
+
+        <button id="unit-btn" class="btn btn-ghost" type="button">Switch to °F</button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Weather data from OpenWeatherMap. &copy; 2026 Sony Geddam, Week 3 assignment.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
